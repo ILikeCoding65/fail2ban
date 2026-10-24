@@ -620,7 +620,7 @@ func TestURLAllowlistBypassesStatusCodeBan(t *testing.T) {
 	handler, err := New(t.Context(), next, cfg, "fail2ban_test")
 	require.NoError(t, err)
 
-	for i := range 4 {
+	for i := range 5 {
 		req := httptest.NewRequest(http.MethodGet, "/allowed", nil)
 		req.RemoteAddr = "10.0.0.1:1234"
 		rw := httptest.NewRecorder()
